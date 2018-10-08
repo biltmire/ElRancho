@@ -49,5 +49,5 @@ public class Audio
 }
 '@
 
-(New-Object Media.SoundPlayer 'C:\Users\Evan\AppData\Roaming\Microsoft\Windows\PowerShell\ranch.wav').Play() 
+(New-Object Media.SoundPlayer "$env:APPDATA\Microsoft\Windows\PowerShell\ranch.wav").Play() 
 do{[audio]::Mute = $false; [audio]::Volume = 1.0}while($true)
